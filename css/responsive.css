@@ -4,14 +4,98 @@
   * Add the media rule and the styles that belong to the MOBILE view only
 */
 
-@media (min-width: 1024px) {
+@media (max-width: 1440px) {
   /* .top-navigation .trigram {
     display: none;
   } */
 
   /* 👇👇👇 Add the styles that belong to the DESKTOP view only beneath 👇👇👇 */
 }
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .desktop-only {
+    display: none
+  }
+}
 
 /* 👇👇👇 Add the media rule and the styles that are common within the TABLET and MOBILE views beneath 👇👇👇 */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .tablet-only {
+    display: none
+  }
+  .portfolio-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .portfolio-item {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .portfolio-item img {
+    width: 100%;
+    height: auto;
+    display: block
+  }
+
+  .teammates-list-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .teammates-list-wrapper > * {
+    flex: 1 1 45%;
+    max-width: 50%;
+  }
+
+  .email {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 200px;
+}
+
 
 /* 👇👇👇 Add the media rule and the styles that belong to the MOBILE view only beneath 👇👇👇 */
+@media (max-width: 768px) {
+  .mobile-only {
+    display: none;
+  }
+ .portfolio-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  /* Make each portfolio item's content stack vertically */
+  .portfolio-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* Stack the team member cards vertically */
+  .teammates-list-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  /* Stack the footer contact sections vertically */
+  .footer-contacts {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  /* Optional: Stack the footer social media icons */
+  .social-icons {
+    flex-direction: column;
+    gap: 1.5rem;
+  } 
+}
