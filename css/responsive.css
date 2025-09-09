@@ -4,30 +4,33 @@
   * Add the media rule and the styles that belong to the MOBILE view only
 */
 
-@media (max-width: 1440px) {
-  /* .top-navigation .trigram {
+@media (min-width: 1024px) {
+  .trigram {
     display: none;
-  } */
+  }
 
-  /* 👇👇👇 Add the styles that belong to the DESKTOP view only beneath 👇👇👇 */
-}
-@media (min-width: 1025px) and (max-width: 1440px) {
-  .desktop-only {
-    display: none
+  .top-navigation li, .social-icons {
+    &:hover {
+      color: #007BFF;
+      background-color: #f0f0f0;
+      border-radius: 5px;
+      text-decoration: underline;
+    } 
   }
 }
 
-/* 👇👇👇 Add the media rule and the styles that are common within the TABLET and MOBILE views beneath 👇👇👇 */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .tablet-only {
-    display: none
+@media (min-width: 768px) and (max-width: 1023px) {
+  .top-navigation li {
+    display: none;
   }
+
   .portfolio-list {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
   }
+
   .portfolio-item {
     display: flex;
     flex-direction: row;
@@ -46,9 +49,18 @@
     justify-content: space-between;
     gap: 1rem;
   }
-  .teammates-list-wrapper > * {
+
+  .teammates-list-wrapper {
     flex: 1 1 45%;
     max-width: 50%;
+  }
+
+  .teammate-img-wrapper {
+    width: 100%;
+  }
+
+  .footer .social-icons {
+    display: none;
   }
 
   .email {
@@ -57,14 +69,18 @@
     justify-content: flex-end;
     align-items: center;
     height: 200px;
-}
+  }
 
-
-/* 👇👇👇 Add the media rule and the styles that belong to the MOBILE view only beneath 👇👇👇 */
-@media (max-width: 768px) {
-  .mobile-only {
+  .teammates-list::before, .teammates-list::after {
     display: none;
   }
+}
+
+@media (max-width: 767px) {
+  .top-navigation li {
+    display: none;
+  }
+
  .portfolio-list {
     display: flex;
     flex-direction: column;
@@ -74,16 +90,18 @@
 
   /* Make each portfolio item's content stack vertically */
   .portfolio-item {
-    flex-direction: column;
-    text-align: center;
+    text-align: left;
   }
 
   /* Stack the team member cards vertically */
   .teammates-list-wrapper {
+    display: flex;
     flex-direction: column;
+    align-content: space-between;
     align-items: center;
-    gap: 2rem;
+    width: 100%;
   }
+
 
   /* Stack the footer contact sections vertically */
   .footer-contacts {
@@ -97,5 +115,9 @@
   .social-icons {
     flex-direction: column;
     gap: 1.5rem;
-  } 
+  }
+
+  .teammates-list::before, .teammates-list::after {
+    display: none;
+  }
 }
