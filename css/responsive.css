@@ -9,24 +9,20 @@
     display: none;
   }
 
-  .top-navigation li span, .social-icons span, .icon{
-    &:hover {
+  .top-navigation li:hover, .social-icons span:hover, .icon:hover {
       color: #007BFF;
       background-color: #f0f0f0;
       border-radius: 5px;
       text-decoration: underline;
     } 
 
-  .teammate-social-icons span {
-    &:hover {
+  .teammate-social-icons:hover {
       color: #007BFF;
       background-color: #f0f0f0;
       border-radius: 5px;
       text-decoration: underline;
     }
   }     
-  }
-}
 
 @media (min-width: 768px) and (max-width: 1023px) {
   .top-navigation li {
@@ -60,12 +56,26 @@
   }
 
   .teammate-img-wrapper{
-    width: 180%;
+    width: 100%;
   }
 
+  .teammate-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+  }
 
-  .footer .social-icons {
+  .teammate {
+    display: flex;
+    flex-direction: column;
+    width: 47%;
+  }
+
+  .social-icons span{
     display: none;
+    width: -10%;
   }
 
   .email {
@@ -86,8 +96,8 @@
     display: none;
   }
 
-  .p.subtext {
-    font-size: 0.9rem;
+  .teammates-content p.subtext {
+    width: 100%;
   }
 
  .portfolio-list {
@@ -116,7 +126,7 @@
     display: flex;
     flex-direction: row;
     border: 1px solid black;
-    width: 47%;
+    width: 100%;
   }
 
   .teammate-data {
